@@ -1,0 +1,166 @@
+﻿<Window x:Class="StudentRegistrationApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registrasi Mahasiswa"
+        Width="900"
+        Height="650"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="REGISTRASI MAHASISWA"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- FORM MAHASISWA -->
+
+            <Border Grid.Column="0"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    Padding="20">
+
+                <StackPanel>
+
+                    <TextBlock Text="Form Data Mahasiswa"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Margin="0,0,0,20"/>
+
+
+                    <TextBlock Text="NIM"/>
+
+                    <TextBox x:Name="txtNIM"
+                             Height="30"
+                             Margin="0,5,0,15"/>
+
+
+                    <TextBlock Text="Nama"/>
+
+                    <TextBox x:Name="txtNama"
+                             Height="30"
+                             Margin="0,5,0,15"/>
+
+
+                    <TextBlock Text="Jurusan"/>
+
+                    <ComboBox x:Name="cmbJurusan"
+                              Height="30"
+                              Margin="0,5,0,15"
+                              SelectionChanged="cmbJurusan_SelectionChanged">
+
+                        <ComboBoxItem Content="Informatika"/>
+                        <ComboBoxItem Content="Sistem Informasi"/>
+                        <ComboBoxItem Content="Teknik Komputer"/>
+                        <ComboBoxItem Content="Teknik Elektro"/>
+                        <ComboBoxItem Content="Manajemen"/>
+
+                    </ComboBox>
+
+
+                    <TextBlock Text="Jenis Kelamin"/>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,8,0,15">
+
+                        <RadioButton x:Name="rbLakiLaki"
+                                     Content="Laki-laki"
+                                     Margin="0,0,20,0"/>
+
+                        <RadioButton x:Name="rbPerempuan"
+                                     Content="Perempuan"/>
+
+                    </StackPanel>
+
+
+                    <TextBlock Text="Alamat"/>
+
+                    <TextBox x:Name="txtAlamat"
+                             Height="60"
+                             Margin="0,5,0,20"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"/>
+
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Button Content="TAMBAH"
+                                Width="90"
+                                Height="35"
+                                Margin="0,0,10,0"
+                                Click="btnTambah_Click"/>
+
+                        <Button Content="EDIT"
+                                Width="90"
+                                Height="35"
+                                Margin="0,0,10,0"
+                                Click="btnEdit_Click"/>
+
+                        <Button Content="HAPUS"
+                                Width="90"
+                                Height="35"
+                                Click="btnHapus_Click"/>
+
+                    </StackPanel>
+
+
+                    <Button Content="CLEAR"
+                            Width="90"
+                            Height="35"
+                            HorizontalAlignment="Left"
+                            Margin="0,10,0,0"
+                            Click="btnClear_Click"/>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <!-- DAFTAR MAHASISWA -->
+
+            <Border Grid.Column="2"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    Padding="20">
+
+                <StackPanel>
+
+                    <TextBlock Text="Daftar Mahasiswa"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Margin="0,0,0,15"/>
+
+                    <ListBox x:Name="lstMahasiswa"
+                             Height="400"
+                             SelectionChanged="lstMahasiswa_SelectionChanged"/>
+
+                    <TextBlock x:Name="txtJumlah"
+                               Text="Jumlah mahasiswa: 0"
+                               FontSize="16"
+                               Margin="0,15,0,0"/>
+
+                </StackPanel>
+
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
